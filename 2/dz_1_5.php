@@ -70,8 +70,8 @@ $car = [
 
 foreach ($car2 as $brend => $items) {
     echo "CAR $brend <br>";
-        foreach ($items as $item) {
-            echo " $item";
-        }
-        echo "<br>";
+    foreach ($items as $item) {
+        echo " $item";
+    }
+    echo "<br>";
 }
