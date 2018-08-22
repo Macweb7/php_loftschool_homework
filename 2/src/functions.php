@@ -9,32 +9,31 @@ function task1($arg1, $arg2)
         return "<p>" . $arg1 . "</p>";
 }
 
-function task2($arg) {
+function task2($arg)
+{
     $numargs = func_num_args();
     $arg_list = func_get_args();
     if ($arg_list[0] == '-') {
         for ($i = 1; $i < $numargs; $i++) {
             echo $result -= $arg_list[$i] . "\n";
         }
-    }
-    elseif ($arg_list[0] == '+') {
+    } elseif ($arg_list[0] == '+') {
         for ($i = 1; $i < $numargs; $i++) {
             echo $result += $arg_list[$i] . "\n";
         }
-    }
-    elseif ($arg_list[0] == '*') {
+    } elseif ($arg_list[0] == '*') {
         for ($i = 1; $i < $numargs; $i++) {
             echo $result *= $arg_list[$i] . "\n";
         }
-    }
-    elseif ($arg_list[0] == '/') {
+    } elseif ($arg_list[0] == '/') {
         for ($i = 1; $i < $numargs; $i++) {
             echo $result /= $arg_list[$i] . "\n";
         }
     }
 }
 
-function task3($rows = 1, $cols = 1) {
+function task3($rows = 1, $cols = 1)
+{
     $int_rows = is_int($rows);
     $int_cols = is_int($cols);
     if (($int_rows == true) and ($int_cols == true)) {
@@ -52,8 +51,7 @@ function task3($rows = 1, $cols = 1) {
             echo "</tr>";
         }
         echo "</table>";
-    }
-    else {
+    } else {
         echo 'Введите целые числа';
     }
 }
