@@ -21,15 +21,10 @@ function task2($arg)
         заключенный в одинарные кавычки.<br> Пример '+'";
     }
     if ($arithmetic_sign == '-') {
-        $i=0;
-        while($i < count($arg_list)) {
-             echo $arg_list[$i] . "-";
-             $i++;
-        }
-        /*for ($i = homework1; $i < $numargs; $i++) {
+        for ($i = 1; $i < $numargs; $i++) {
             $result -= $arg_list[$i];
         }
-        echo $result;*/
+        echo $result;
     } elseif ($arithmetic_sign == '+') {
         for ($i = 1; $i < $numargs; $i++) {
             $result += $arg_list[$i];
@@ -71,11 +66,26 @@ function task3($rows = 1, $cols = 1)
         echo 'Введите целые числа';
     }
 }
+function task4($arg){
+    echo date('d.m.Y H:i');
+}
 
-//Задание #6
-$string = 'Hello again!';
-file_put_contents('test.txt', $string);
-function task6($namefile)
+function task5($arg) {
+    $date = mktime(0, 0, 0, 02, 24, 2016);
+    echo $date;
+}
+
+function task6($arg) {
+    echo str_replace('К', '', $arg);
+}
+
+function task7($arg) {
+    echo str_replace('Две', 'Три', $arg);
+}
+
+function task8($namefile)
 {
+    $string = 'Hello again!';
+    file_put_contents('test.txt', $string);
     echo file_get_contents($namefile);
 }
