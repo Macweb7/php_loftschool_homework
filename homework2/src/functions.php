@@ -66,20 +66,25 @@ function task3($rows = 1, $cols = 1)
         echo 'Введите целые числа';
     }
 }
-function task4($arg){
+
+function task4($arg)
+{
     echo date('d.m.Y H:i');
 }
 
-function task5($arg) {
+function task5($arg)
+{
     $date = mktime(0, 0, 0, 02, 24, 2016);
     echo $date;
 }
 
-function task6($arg) {
+function task6($arg)
+{
     echo str_replace('К', '', $arg);
 }
 
-function task7($arg) {
+function task7($arg)
+{
     echo str_replace('Две', 'Три', $arg);
 }
 
@@ -89,3 +94,4 @@ function task8($namefile)
     file_put_contents('test.txt', $string);
     echo file_get_contents($namefile);
 }
+
