@@ -23,13 +23,4 @@ $string2 = 'Две бутылки лимонада';
 echo str_replace('К', '', $string);
 echo str_replace('Две', 'Три', $string2);
 
-//Задание #6
-$string = 'Hello again!';
-file_put_contents('test.txt', $string);
-
-function reading_file($namefile)
-{
-    echo file_get_contents($namefile);
-}
-
-reading_file('test.txt');
+task6('test.txt');

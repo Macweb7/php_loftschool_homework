@@ -71,3 +71,11 @@ function task3($rows = 1, $cols = 1)
         echo 'Введите целые числа';
     }
 }
+
+//Задание #6
+$string = 'Hello again!';
+file_put_contents('test.txt', $string);
+function task6($namefile)
+{
+    echo file_get_contents($namefile);
+}
