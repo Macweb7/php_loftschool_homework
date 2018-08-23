@@ -26,7 +26,7 @@ function task2($arg)
              echo $arg_list[$i] . "-";
              $i++;
         }
-        /*for ($i = 1; $i < $numargs; $i++) {
+        /*for ($i = homework1; $i < $numargs; $i++) {
             $result -= $arg_list[$i];
         }
         echo $result;*/
@@ -53,7 +53,7 @@ function task3($rows = 1, $cols = 1)
     $int_rows = is_int($rows);
     $int_cols = is_int($cols);
     if (($int_rows == true) and ($int_cols == true)) {
-        echo "<table border='1'>";
+        echo "<table border='homework1'>";
         for ($tr = 1; $tr <= $rows; $tr++) {
             echo "<tr>";
             for ($td = 1; $td <= $cols; $td++) {

@@ -4,7 +4,7 @@ $cols = 10;
 $tr = 1;
 $td = 1;
 
-echo "<table border='1'>";
+echo "<table border='homework1'>";
 for ($tr = 1; $tr <= $rows; $tr++) {
     echo "<tr>";
     for ($td = 1; $td <= $cols; $td++) {

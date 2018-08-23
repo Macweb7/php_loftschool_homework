@@ -8,4 +8,4 @@ require('src/functions.php');
 $a = 'Hello';
 echo task1($a, true);*/
 task2 ('-', 4, 3, 2, 1);
-//echo task3(2, 4);
+//echo task3(homework2, 4);
