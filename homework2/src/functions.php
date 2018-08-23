@@ -12,23 +12,39 @@ function task1($arg1, $arg2)
 function task2($arg)
 {
     $numargs = func_num_args();
+    //echo $numargs;
     $arg_list = func_get_args();
-    if ($arg_list[0] == '-') {
-        for ($i = 1; $i < $numargs; $i++) {
-            echo $result -= $arg_list[$i] . "\n";
+    $arithmetic_sign = $arg_list[0];
+    $result = '';
+    if (!is_string($arithmetic_sign)) {
+        echo "Первым параметром передайте один из арифметических знаков: +, -, *, /, 
+        заключенный в одинарные кавычки.<br> Пример '+'";
+    }
+    if ($arithmetic_sign == '-') {
+        $i=0;
+        while($i < count($arg_list)) {
+             echo $arg_list[$i] . "-";
+             $i++;
         }
-    } elseif ($arg_list[0] == '+') {
-        for ($i = 1; $i < $numargs; $i++) {
-            echo $result += $arg_list[$i] . "\n";
+        /*for ($i = 1; $i < $numargs; $i++) {
+            $result -= $arg_list[$i];
         }
-    } elseif ($arg_list[0] == '*') {
+        echo $result;*/
+    } elseif ($arithmetic_sign == '+') {
         for ($i = 1; $i < $numargs; $i++) {
-            echo $result *= $arg_list[$i] . "\n";
+            $result += $arg_list[$i];
         }
-    } elseif ($arg_list[0] == '/') {
+        echo $result;
+    } elseif ($arithmetic_sign == '*') {
         for ($i = 1; $i < $numargs; $i++) {
-            echo $result /= $arg_list[$i] . "\n";
+            $result *= $arg_list[$i];
         }
+        echo $result;
+    } elseif ($arithmetic_sign == '/') {
+        for ($i = 1; $i < $numargs; $i++) {
+            $result /= $arg_list[$i] . "\n";
+        }
+        echo $result;
     }
 }
 

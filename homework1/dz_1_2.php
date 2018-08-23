@@ -1,5 +1,5 @@
 <?php
-#Задание 2
+#Задание 1
 define("DRAWINGS", "80");
 define("FELTPENS", "23");
 define("PENCILS", "40");
