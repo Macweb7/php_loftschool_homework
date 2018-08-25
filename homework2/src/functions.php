@@ -3,7 +3,6 @@
 {
     echo "$input[0] + $input[1] = ", $input[0]+$input[1];
 }*/
-
 function task1($arg1, $arg2)
 {
     if ((is_array($arg1)) and ($arg2 !== 'true')) {
@@ -25,13 +24,12 @@ function task2($arg)
     $result = '';
     if ($arithmetic_sign == '-') {
         for ($i = 1; $i < count($arg_list); $i++) {
-            echo $arg_list[$i] + 2 . "<br>";
+            $result -= $arg_list[$i];
         }
         echo $result;
     } elseif ($arithmetic_sign == '+') {
-        unset($arg_list[0]);
         for ($i = 1; $i < count($arg_list); $i++) {
-            $result += $arg_list[$i];
+            echo "$arg_list[$i] + ";
         }
         echo $result;
     } elseif ($arithmetic_sign == '*') {
