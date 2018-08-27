@@ -3,47 +3,50 @@
 {
     echo "$input[0] + $input[1] = ", $input[0]+$input[1];
 }*/
-function task1($arg1, $arg2)
+function task1($strings, $glue = false)
 {
-    if ((is_array($arg1)) and ($arg2 !== 'true')) {
-        foreach ($arg1 as $val) {
-            echo "<p>" . $val . "</p>";
+    if (!is_array($strings)) {
+        return false;
+    }
+    if ($glue === false) {
+        foreach ($strings as $string) {
+            echo "<p>" . $string . "</p>";
         }
-    } else
-        return "<p>" . $arg1 . "</p>";
+    } else {
+        return "<p>" . implode($strings) . "</p>";
+    }
 }
 
-function task2($arg)
+function task2(...$arg)
 {
-    $arg_list = func_get_args();
-    $arithmetic_sign = $arg_list[0];
-    if (!is_string($arithmetic_sign)) {
-        echo "Первым параметром передайте один из арифметических знаков: +, -, *, /, 
-        заключенный в одинарные кавычки.<br> Пример '+'";
+    $arg_list = $arg;
+    $arithmetic_sign = array_shift($arg_list);
+    $imploded_numbers = implode($arithmetic_sign, $arg_list);
+    /*echo $imploded_numbers . " =";
+    eval('$result = ' . "$imploded_numbers;");
+    echo $result;*/
+    $first_number = array_shift($arg_list);
+    $numbers = $arg_list;
+    $result = $first_number;
+    echo $result;
+    foreach ($numbers as $number) {
+        echo $arithmetic_sign . $number;
+        switch ($arithmetic_sign) {
+            case '-' :
+                $result -= $number;
+                break;
+            case '+' :
+                $result += $number;
+                break;
+            case '*' :
+                $result *= $number;
+                break;
+            case '/' :
+                $result /= $number;
+                break;
+        }
     }
-    $result = '';
-    if ($arithmetic_sign == '-') {
-        for ($i = 1; $i < count($arg_list); $i++) {
-            $result -= $arg_list[$i];
-        }
-        echo $result;
-    } elseif ($arithmetic_sign == '+') {
-        for ($i = 1; $i < count($arg_list); $i++) {
-            echo "$arg_list[$i] + ";
-        }
-        echo $result;
-    } elseif ($arithmetic_sign == '*') {
-        unset($arg_list[0]);
-        for ($i = 1; $i < $arg_list[$i]; $i++) {
-            $result *= $arg_list[$i];
-        }
-        echo $result;
-    } elseif ($arithmetic_sign == '/') {
-        for ($i = 1; $i < $numargs; $i++) {
-            $result /= $arg_list[$i] . "\n";
-        }
-        echo $result;
-    }
+    echo " = $result";
 }
 
 function task3($rows = 1, $cols = 1)
@@ -70,31 +73,30 @@ function task3($rows = 1, $cols = 1)
     }
 }
 
-function task4($arg)
+function task4()
 {
     echo "<p>" . date('d.m.Y H:i') . "</p>";
 }
 
-function task5($arg)
+function task5()
 {
     $date = mktime(0, 0, 0, 02, 24, 2016);
     echo "<p>" . $date . "</p>";
 }
 
-function task6($arg)
+function task6($string)
 {
-    echo "<p>" . str_replace('К', '', $arg) . "</p>";
+    echo "<p>" . str_replace('К', '', $string) . "</p>";
 }
 
-function task7($arg)
+function task7($string)
 {
-    echo "<p>" . str_replace('Две', 'Три', $arg) . "</p>";
+    echo "<p>" . str_replace('Две', 'Три', $string) . "</p>";
 }
 
-function task8($namefile)
+function task8($filename)
 {
     $string = 'Hello again!';
     file_put_contents('test.txt', $string);
-    echo "<p>" . file_get_contents($namefile) . "</p>";
+    echo "<p>" . file_get_contents($filename) . "</p>";
 }
-
